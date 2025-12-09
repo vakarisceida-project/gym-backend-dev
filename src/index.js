@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { AppDataSource } from './infrastructure/database/data-source.js'
+import authRoutes from './presentation/routes/authRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,9 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/auth', authRoutes);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
