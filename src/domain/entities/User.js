@@ -9,7 +9,7 @@ export const User = new EntitySchema({
       type: 'uuid',
       generated: 'uuid',
     },
-    email: {
+    username: {
       type: 'varchar',
       unique: true,
       nullable: false,
@@ -18,13 +18,18 @@ export const User = new EntitySchema({
       type: 'varchar',
       nullable: false,
     },
-    firstName: {
+    weight: {
       type: 'varchar',
       nullable: false,
     },
-    lastName: {
+    height: {
       type: 'varchar',
       nullable: false,
+    },
+    schedule: {
+      type: 'jsonb',
+      nullable: false,
+      default: '[]',
     },
     createdAt: {
       type: 'timestamp',

@@ -6,9 +6,9 @@ export const getUserRepository = () => {
 };
 
 export class UserRepository {
-  static async findByEmail(email) {
+  static async findByUsername(username) {
     const repository = getUserRepository();
-    return repository.findOne({ where: { email } });
+    return repository.findOne({ where: { username } });
   }
 
   static async findById(id) {

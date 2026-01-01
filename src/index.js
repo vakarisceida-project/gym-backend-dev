@@ -33,8 +33,9 @@ AppDataSource.initialize()
   .then(() => {
     console.log('✅ Database connection established');
     
-    app.listen(PORT, () => {
-      console.log(`🚀 Server is running on http://localhost:${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`🚀 Server is running on http://0.0.0.0:${PORT}`);
+      console.log(`📱 Android emulator: http://10.0.2.2:${PORT}`);
     });
   })
   .catch((error) => {
